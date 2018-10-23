@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="Lap3._2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lap3._2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="NavigationButtonStyle">
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="0,0,2,0" />
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Height" Value="100"/>
+        </Style>
+        <Style TargetType="Image" x:Key="IconImageStyle">
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Margin" Value="0,0,10,0" />
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Style="{StaticResource NavigationButtonStyle}" Grid.Column="0" Grid.Row="0" Tapped="Button_Tapped" Tag="donut">
+            <StackPanel Orientation="Horizontal">
+                <Image Style="{StaticResource IconImageStyle}" Source="Assets/donut-icon.png"></Image>
+                <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">Donut</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource NavigationButtonStyle}" Grid.Column="1" Grid.Row="0" Tapped="Button_Tapped" Tag="coffee">
+            <StackPanel Orientation="Horizontal">
+                <Image Style="{StaticResource IconImageStyle}" Source="Assets/coffee-icon.png"></Image>
+                <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">Coffee</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource NavigationButtonStyle}" Grid.Column="2" Grid.Row="0" Tapped="Button_Tapped" Tag="schedule">
+            <StackPanel Orientation="Horizontal">
+                <Image Style="{StaticResource IconImageStyle}" Source="Assets/schedule-icon.png"></Image>
+                <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">Schedule</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource NavigationButtonStyle}" Grid.Column="3" Grid.Row="0" Tapped="Button_Tapped" Tag="complete">
+            <StackPanel Orientation="Horizontal">
+                <Image Style="{StaticResource IconImageStyle}" Source="Assets/complete-icon.png"></Image>
+                <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">Complete</TextBlock>
+            </StackPanel>
+        </Button>
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="66*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Frame>
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Assets/background.jpg" Stretch="UniformToFill"/>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

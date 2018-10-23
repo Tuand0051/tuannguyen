@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="Lap3._2.CoffeePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lap3._2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#3C1F19">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.Row="0" Style="{StaticResource WhiteLogoStyle}"/>
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical">
+            <StackPanel Margin="100 0 0 0" Orientation="Horizontal">
+                <Button Name="Roast" Foreground="White" Content="Roast" Style="{StaticResource btnFly}">
+                    <Button.Flyout>
+                        <MenuFlyout Placement="Top">
+                            <MenuFlyoutItem Text="None" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Dark" Click="MenuFlyoutItem_Click"/>
+                            <MenuFlyoutItem Text="Medium" Click="MenuFlyoutItem_Click"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+                <Button Name="Sweetener" Foreground="White" Content="Sweetener" Style="{StaticResource btnFly}">
+                    <Button.Flyout>
+                        <MenuFlyout Placement="Top">
+                            <MenuFlyoutItem Text="None" Click="MenuFlyoutItem_Click_1"/>
+                            <MenuFlyoutItem Text="Sugar" Click="MenuFlyoutItem_Click_1"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+                <Button Name="Cream" Foreground="White" Content="Cream" Style="{StaticResource btnFly}">
+                    <Button.Flyout>
+                        <MenuFlyout Placement="Top">
+                            <MenuFlyoutItem Text="None" Click="MenuFlyoutItem_Click_2"/>
+                            <MenuFlyoutItem Text="2% Milk" Click="MenuFlyoutItem_Click_2"/>
+                            <MenuFlyoutItem Text="Whole Milk" Click="MenuFlyoutItem_Click_2"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </StackPanel>
+            <TextBlock x:Name="txtCoffee" Margin="30 40 0 0" Foreground="White">Coffee:</TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

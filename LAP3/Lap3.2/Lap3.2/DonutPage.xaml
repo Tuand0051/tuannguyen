@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Lap3._2.DonutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lap3._2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Red">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.Row="0" Style="{StaticResource WhiteLogoStyle}"/>
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource LabelTextBlockStyle}">Original Glazed Count:</TextBlock>
+                <Slider Margin="30 10 0 0" Maximum="24" Width="250" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource LabelTextBlockStyle}">Speedway Special Count:</TextBlock>
+                <Slider Margin="10" Maximum="24" Width="250" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
